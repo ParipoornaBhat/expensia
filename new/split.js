@@ -132,7 +132,7 @@ function uv() {
   const bill = document.getElementById("bd");
   bill.innerHTML = ""; //clears the old bill table if any.
   bill.appendChild(bdt);
-  bill.style.display = "block";
+  bdt.style.display = "block";
 
   //cc=0, total checks of that food is set to 0
   for (i = 0; i < nof; i++) {
