@@ -96,6 +96,7 @@ td {
 }
 table {
   max-width: 100% !important;
+  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   word-break: break-all;
@@ -111,4 +112,6 @@ table input {
   color: aliceblue;
   font-size: 15px;
   margin-left: 10px;
+  width: 100%;
+  boxSizing: border-box;
 }
