@@ -10,18 +10,21 @@ body {
 }
 .bgimg {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  z-index: -1;
   width: 100%;
+  z-index: -1;
+  background-size: cover;
 }
 .top {
   color: aliceblue;
-  border: 2px aliceblue solid;
+  border: 2vw aliceblue solid; /* Using vw (viewport width) for border width */
   font-family: comfortaa;
   background: transparent;
-  padding: 30px;
-  padding-left: 50px;
-  padding-right: 75px;
+  padding: 3vw; /* Using vw for padding as well */
+  padding-left: 5vw;
+  padding-right: 7.5vw;
   border-radius: 4px;
   backdrop-filter: blur(5px);
 }
