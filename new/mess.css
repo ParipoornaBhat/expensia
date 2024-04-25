@@ -97,6 +97,14 @@ td {
 td {
   padding: 15px;
 }
+table 
+{
+  max-width: 100% !important;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-break: break-all;
+}
 table input {
   background-color: rgb(8, 8, 2);
   border: 2px rgb(150, 150, 150) solid;
