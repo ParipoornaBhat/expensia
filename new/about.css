@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  color: aliceblue;
+  background-color: #12100e;
+  margin: 10px;
+  height: 100dvh;
+}
+.bgimg {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+}
+.top {
+  color: aliceblue;
+  border: 2px aliceblue solid;
+  font-family: comfortaa;
+  background: transparent;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 75px;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+}
+.top h1 {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: left;
+  display: inline-block;
+  padding: none;
+}
+.top a {
+  float: right;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.top a:hover {
+  color: blanchedalmond;
+  background-color: rgb(44, 54, 69);
+}
+
+.top a.active {
+  color: orange;
+}
+.container-main {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: aliceblue;
+}
+.container-main section {
+  font-family: comfortaa;
+  display: inline-block;
+  color: orange;
+}
+.profiles {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  scale: 1.7;
+  margin-top: 20%;
+  padding-top: 0;
+}
+.profile-group {
+  position: relative;
+  margin-left: -12px;
+  cursor: pointer;
+}
+.profile-group:hover img {
+  top: -1rem;
+  z-index: 2;
+}
+.profile-group img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 4px rgb(208, 206, 206) solid;
+  position: relative;
+  top: 0;
+  transition: 0.3s top ease-in-out;
+}
+.profile-group p {
+  position: absolute;
+  border-radius: inherit;
+  padding: 0.2rem 0.5rem;
+  top: 6rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.profile-group p#mentor {
+  position: absolute;
+  border-radius: inherit;
+  padding: 0.2rem 0.5rem;
+  top: -35px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.profile-group:hover p,
+.profile-group:hover p#mentor {
+  display: block;
+  font-size: small;
+}

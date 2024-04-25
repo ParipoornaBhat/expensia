@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mess Expenditure Calculator</title>
+    <link rel="stylesheet" href="mess.css" />
+  </head>
+  <body>
+    <img class="bgimg" src="bgdark.avif" />
+    <div class="top">
+      <h1>E X P E N S I A .</h1>
+      <a href="about.html">About Us</a>
+      <a href="home.html">Home</a>
+    </div>
+    <div class="container-main">
+      <h1>Mess Expenditure Calculator.</h1>
+      <section>
+        <label for="numStudents">Number of Students:</label>
+        <input type="number" id="numStudents" />
+        <br />
+      </section>
+      <section>
+        <label for="totalDays">Total Days:</label>
+        <input type="number" id="totalDays" />
+        <br />
+      </section>
+      <section>
+        <label for="totalExpenditure">Total Expenditure:</label>
+        <input type="number" id="totalExpenditure" />
+        <br />
+      </section>
+      <button onclick="generateTable()">Generate Table</button>
+
+      <table id="studentsTable" style="display: none">
+        <thead>
+          <tr>
+            <th>Roll Number</th>
+            <th>Total Days</th>
+            <th>Days Reduced</th>
+            <th>Days Attended</th>
+            <th>Amount to Pay</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button onclick="calculateBill()">Calculate Bill</button>
+      <button onclick="printPDF()">Print PDF</button>
+      <script src="mess.js"></script>
+    </div>
+  </body>
+</html>
