@@ -39,7 +39,6 @@ function ct(){
 
   const tbody = document.createElement("tbody");
 
-  //adds foodname, food price textbox with checkboxes for nof times
   for (let i = 0; i < nos; i++) 
   {
     const row = document.createElement("tr");
