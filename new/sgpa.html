@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Splitter</title>
+
+    <link rel="stylesheet" href="sgpa.css" />
+  </head>
+  <body>
+    <img class="bgimg" src="bgdark.avif" />
+    <div class="top">
+      <h1>E X P E N S I A .</h1>
+      <a href="about.html">About Us</a>
+      <a href="home.html">Home</a>
+    </div>
+    <div class="container-main">
+      <h1>SGPA Calculator.</h1>
+      <section>
+        <label for="nos">Number Of Subjects:</label>
+        <input type="number" id="nos" min="1" />
+      </section>
+      <button onclick="ct()">Create Table</button>
+      <button onclick="addSubject()">Add Subject</button>
+      
+      <div id="tc"></div>
+      <br>
+      <button onclick="uv()">Update and Calculate</button>
+
+      <div id="s_gpa"></div>
+<table>
+  <thead>
+    <tr>
+      <th>Grade Range</th>
+      <th>Grade</th>
+      <th>Grade Point</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>90-100</td>
+      <td>O (Outstanding)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>80-89</td>
+      <td>A+ (Excellent)</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>70-79</td>
+      <td>A (Very Good)</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>60-69</td>
+      <td>B+ (Good)</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>50-59</td>
+      <td>B (Average)</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>40-49</td>
+      <td>C (Pass)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Below 40</td>
+      <td>F (Fail)</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+      <button onclick="printPDF()">Print PDF</button>
+      <script src="sgpa.js"></script>
+    </div>
+  </body>
+</html>
