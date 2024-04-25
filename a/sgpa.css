@@ -90,12 +90,12 @@ body {
 button:hover {
   scale: 1.1;
 }
-table,
-td {
+table,td {
   border: 2px rgb(106, 106, 107) solid;
 }
 table {
   max-width: 100% !important;
+  width:100%;
   border-collapse: collapse;
   table-layout: fixed;
   word-break: break-all;
