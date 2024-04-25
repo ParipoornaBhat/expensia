@@ -71,12 +71,12 @@ function ct(){
         seeip.step=`1`;
       seec.appendChild(seeip);
 
-    const tt = document.createElement("td");
-      tt.id = `tt${i}`;
-    const g = document.createElement("td");
-      g.id = `g${i}`;
-    const gp = document.createElement("td");
-      gp.id = `gp${i}`;
+    const ttc = document.createElement("td");
+      ttc.id = `tt${i}`;
+    const gc = document.createElement("td");
+      gc.id = `g${i}`;
+    const gpc = document.createElement("td");
+      gpc.id = `gp${i}`;
 
     const crec = document.createElement("td");
       const creip = document.createElement("input");
@@ -87,17 +87,17 @@ function ct(){
         creip.max = `4`;
         creip.step=`1`;
       crec.appendChild(creip);
-    const ttt = document.createElement("td");
-      ttt.id = `ttt${i}`;
+    const tttc = document.createElement("td");
+      tttc.id = `ttt${i}`;
 
     row.appendChild(sbn);
     row.appendChild(ciec);
     row.appendChild(seec);
-    row.appendChild(tt);
-    row.appendChild(g);
-    row.appendChild(gp);
+    row.appendChild(ttc);
+    row.appendChild(gc);
+    row.appendChild(gpc);
     row.appendChild(crec);
-    row.appendChild(ttt);
+    row.appendChild(tttc);
 
     tbody.appendChild(row);
   
