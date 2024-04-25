@@ -97,3 +97,13 @@ td {
 td {
   padding: 15px;
 }
+table input {
+  background-color: rgb(8, 8, 2);
+  border: 2px rgb(150, 150, 150) solid;
+  padding: 10px;
+  color: aliceblue;
+  font-size: 15px;
+  margin-left: 10px;
+  width: 100%;
+  boxSizing: border-box;
+}
