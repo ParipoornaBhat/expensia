@@ -109,7 +109,7 @@ function ct(){
 function uv() 
 {
   const nos = document.getElementById("nos").value;
-  const s=0,cret=0,sgpa=0;
+  const s=0,cret=0;
   const ssgpa=document.getElementById("s_gpa");
   ssgpa.innerHTML="";
 
@@ -182,7 +182,7 @@ function uv()
     ttt.textContent=`${tttv}`;// final total of each subject gets updated
 
   }
-  sgpa=s/cret;
+  const sgpa=s/cret;
   
   const sg=document.createElement("table");
     sg.style.display = "block";
