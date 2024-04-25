@@ -127,11 +127,8 @@ function uv() {
     gp.innerHTML = "";
     ttt.innerHTML = "";
 
-    const tot = cie + se;
-    const grpt = 1;
-    const tttv = c * grpt;
-    s = s + tttv;
-    cret = cret + c;
+    let tot = cie + se;
+
 
     tt.textContent = `${tot.toFixed(2)}`; // Total updates
 
@@ -143,6 +140,7 @@ function uv() {
     } else if (tot >= 80 && tot <= 89) {
       grade = "A+ (Excellent)";
       gradePoint = 9;
+      grpt = 1;
     } else if (tot >= 70 && tot <= 79) {
       grade = "A (Very good)";
       gradePoint = 8;
@@ -162,6 +160,9 @@ function uv() {
 
     g.textContent = grade;
     gp.textContent = gradePoint;
+    const tttv = c * gradePoint;
+    s = s + tttv;
+    cret = cret + c;
     ttt.textContent = `${tttv}`; // Final total of each subject gets updated
   }
 
