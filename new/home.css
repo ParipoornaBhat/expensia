@@ -19,12 +19,12 @@ body {
 }
 .top {
   color: aliceblue;
-  border: 2vw aliceblue solid; /* Using vw (viewport width) for border width */
+  border: 2px aliceblue solid;
   font-family: comfortaa;
   background: transparent;
-  padding: 3vw; /* Using vw for padding as well */
-  padding-left: 5vw;
-  padding-right: 7.5vw;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 75px;
   border-radius: 4px;
   backdrop-filter: blur(5px);
 }
