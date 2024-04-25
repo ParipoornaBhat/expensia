@@ -72,108 +72,59 @@ function ct() {
   t.appendChild(table);
 }
 
-function uv() {
-  let cc = {};
-  const nop = parseInt(document.getElementById("nop").value);
-  const nof = parseInt(document.getElementById("nof").value);
-  //push peoplename in pn
-  for (i = 0; i < nop; i++) {
-    const ppln = document.getElementById(`p${i}`).value;
-    pn.push(ppln);
+function uv() 
+{
+  const s=0,cret=0,sgpa;
+  const ssgpa=document.getElementById("s_gpa");
+  ssgpa.innerHTML="";
+
+  for (i = 0; i < nop; i++) 
+  {
+    const cie=document.getElementById(`cie${i}`).value;
+    const se=document.getElementById(`see${i}`).value;
+    const tt=document.getElementById(`tt${i}`);
+    const g=document.getElementById(`g${i}`);
+    const gp=document.getElementById(`gp${i}`);
+    const ttt=document.getElementById(`ttt${i}`);
+    const c=document.getElementById(`cre${i}`).value;
+
+    const tot,grpt,tttv;
+    tot=cie*see;//subject total
+    tttv=c*grpt;
+    s=s+tttv;
+    cret=cret+c;
+
+    
+    
+
   }
+  sgpa=s/cret;
+  
+  const sg=document.createElement("table");
+    sg.style.display = "block";
+  const r=document.createElement("tr");
 
-  //fp[foodname]=price ,, updates price.
-  for (i = 0; i < nof; i++) {
-    const foodn = document.getElementById(`fn${i}`).value;
-    const foodp = parseInt(document.getElementById(`fp${i}`).value);
-    fp[foodn] = foodp;
-  }
+  const c1=document.createElement("th");
+    c1.textContent="SGPA  =  ";
+  const c2=document.createElement("th");
+    c2.textContent=`${sgpa.ToFixed(2)}`;
+  
+r.appendChild(c1);
+r.appendChild(c2);
+sg.appendChild(r);
 
-  //billdetails
-  //bdt=billdetailstable
-  //thead
-  const bdt = document.createElement("table");
-  bdt.id = "bdetails";
-  bdt.border = 1;
+  ssgpa.appendChild(sg);
+  
 
-  const thead = document.createElement("thead");
-
-  const hr = document.createElement("tr");
-  const headname = document.createElement("th");
-  headname.textContent = "Names";
-  const htb = document.createElement("th");
-  htb.textContent = "Total Bill";
-
-  hr.appendChild(headname);
-  hr.appendChild(htb);
-  thead.appendChild(hr);
-  bdt.appendChild(thead);
-
-  //create table body,, adds names and bill amount,
-  const tbody = document.createElement("tbody");
-
-  for (i = 0; i < nop; i++) {
-    const pplnam = document.getElementById(`p${i}`).value;
-
-    const trr = document.createElement("tr"); //trr=table row
-
-    const cellname = document.createElement("td");
-    cellname.textContent = pplnam;
-
-    const cellbill = document.createElement("td");
-    cellbill.id = `pnb${i}`;
-    cellbill.textContent = "₹0.00";
-    trr.appendChild(cellname);
-    trr.appendChild(cellbill);
-    tbody.appendChild(trr);
-    bdt.appendChild(tbody);
-  }
-
-  const bill = document.getElementById("bd");
-  bill.innerHTML = ""; //clears the old bill table if any.
-  bill.appendChild(bdt);
-  bill.style.display = "block";
-
-  //cc=0, total checks of that food is set to 0
-  for (i = 0; i < nof; i++) {
-    cc[i] = 0;
-  }
-
-  //cc++ for each food , updates the umber of checks for that food item
-  for (let i = 0; i < nof; i++) {
-    for (let j = 0; j < nop; j++) {
-      const ccb = document.getElementById(`f${i}p${j}`);
-      if (ccb.checked) {
-        cc[i]++;
-      }
-    }
-  }
-
-  //calcation
-  for (let i = 0; i < nop; i++) {
-    let tb = 0;
-    for (let j = 0; j < nof; j++) {
-      const foodp = parseFloat(document.getElementById(`fp${j}`).value);
-      const ccb = document.getElementById(`f${j}p${i}`);
-      if (ccb.checked && cc[j] !== 0) {
-        tb += foodp / cc[j];
-      }
-      document.getElementById(`pnb${i}`).textContent = `₹${tb.toFixed(2)}`;
-    }
-  }
 }
 
-function addFoodItem() {
+function addSubject() {
   const nof = parseInt(document.getElementById("nof").value);
   document.getElementById("nof").value = nof + 1;
   ct();
 }
 
-function addPerson() {
-  const nop = parseInt(document.getElementById("nop").value);
-  document.getElementById("nop").value = nop + 1;
-  ct();
-}
+
 function printPDF() {
   window.print();
 }
