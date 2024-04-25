@@ -106,99 +106,81 @@ function ct(){
 }
 }
 
-function uv() 
-{
-  const nos = document.getElementById("nos").value;
-  const s=0,cret=0;
-  const ssgpa=document.getElementById("s_gpa");
-  ssgpa.innerHTML="";
+function uv() {
+  const nos = parseInt(document.getElementById("nos").value);
+  let s = 0, cret = 0;
+  const ssgpa = document.getElementById("s_gpa");
+  ssgpa.innerHTML = "";
 
-  for (let i = 0; i < nos; i++) 
-  {
-    const cie=document.getElementById(`cie${i}`).value;
-    const se=document.getElementById(`see${i}`).value;
-    const tt=document.getElementById(`tt${i}`);
-    const g=document.getElementById(`g${i}`);
-    const gp=document.getElementById(`gp${i}`);
-    const ttt=document.getElementById(`ttt${i}`);
-    const c=document.getElementById(`cre${i}`).value;
+  for (let i = 0; i < nos; i++) {
+    const cie = parseFloat(document.getElementById(`cie${i}`).value);
+    const se = parseFloat(document.getElementById(`see${i}`).value);
+    const tt = document.getElementById(`tt${i}`);
+    const g = document.getElementById(`g${i}`);
+    const gp = document.getElementById(`gp${i}`);
+    const ttt = document.getElementById(`ttt${i}`);
+    const c = parseFloat(document.getElementById(`cre${i}`).value);
 
-    //clearing previous data:
-    tt.innerHTML="";
-    g.innerHTML="";
-    gp.innerHTML="";
-    ttt.innerHTML="";
+    // Clearing previous data:
+    tt.innerHTML = "";
+    g.innerHTML = "";
+    gp.innerHTML = "";
+    ttt.innerHTML = "";
 
-    const tot=cie+se,grpt=1,tttv=c*grpt;
-    s=s+tttv;
-    cret=cret+c;
+    const tot = cie + se;
+    const grpt = 1;
+    const tttv = c * grpt;
+    s = s + tttv;
+    cret = cret + c;
 
-    tt.textContent=`${tot.ToFixed(2)}`;//total updates
+    tt.textContent = `${tot.toFixed(2)}`; // Total updates
 
-//grade and grade point updates (also value is assigned grpt)
-    if(tot>=90 && tot<=100)
-    {
-      g.textContent=" O (Outstanding)";
-      gp.textContent="10";
-      grpt=10;
-    }
-    else if(tot>=80 && tot<=89)
-    {
-      g.textContent=" A+ (Excellent)";
-      gp.textContent="9";
-      grpt=9;
-    }
-    else if(tot>=70 && tot<=79)
-    {
-      g.textContent=" A (Very good)";
-      gp.textContent="8";
-      grpt=8;
-    }
-    else if(tot>=60 && tot<=69)
-    {
-      g.textContent=" B+ (Good)";
-      gp.textContent="7";
-      grpt=7;
-    }
-    else if(tot>=50 && tot<=59)
-    {
-      g.textContent=" B (Average)";
-      gp.textContent="6";
-      grpt=6;
-    }
-    else if(tot>=40 && tot<=49)
-    {
-      g.textContent=" C (Pass)";
-      gp.textContent="5";
-      grpt=5;
-    }
-    else
-    {
-      g.textContent=" F (Fail)";
-      gp.textContent="0";
-      grpt=0;
+    // Grade and Grade point updates (also value is assigned grpt)
+    let grade, gradePoint;
+    if (tot >= 90 && tot <= 100) {
+      grade = "O (Outstanding)";
+      gradePoint = 10;
+    } else if (tot >= 80 && tot <= 89) {
+      grade = "A+ (Excellent)";
+      gradePoint = 9;
+    } else if (tot >= 70 && tot <= 79) {
+      grade = "A (Very good)";
+      gradePoint = 8;
+    } else if (tot >= 60 && tot <= 69) {
+      grade = "B+ (Good)";
+      gradePoint = 7;
+    } else if (tot >= 50 && tot <= 59) {
+      grade = "B (Average)";
+      gradePoint = 6;
+    } else if (tot >= 40 && tot <= 49) {
+      grade = "C (Pass)";
+      gradePoint = 5;
+    } else {
+      grade = "F (Fail)";
+      gradePoint = 0;
     }
 
-    ttt.textContent=`${tttv}`;// final total of each subject gets updated
-
+    g.textContent = grade;
+    gp.textContent = gradePoint;
+    ttt.textContent = `${tttv}`; // Final total of each subject gets updated
   }
-  const sgpa=s/cret;
-  
-  const sg=document.createElement("table");
-    sg.style.display = "block";
-  const r=document.createElement("tr");
-    const c1=document.createElement("th");
-      c1.textContent="SGPA  =  ";
-    const c2=document.createElement("th");
-      c2.textContent=`${sgpa.ToFixed(2)}`; 
+
+  const sgpa = s / cret;
+
+  const sg = document.createElement("table");
+  sg.style.display = "block";
+  const r = document.createElement("tr");
+  const c1 = document.createElement("th");
+  c1.textContent = "SGPA  =  ";
+  const c2 = document.createElement("th");
+  c2.textContent = `${sgpa.toFixed(2)}`;
   r.appendChild(c1);
   r.appendChild(c2);
   sg.appendChild(r);
 
   ssgpa.appendChild(sg);
-  
-
 }
+
 function addSubject() 
 {
   const nos = parseInt(document.getElementById("nos").value);
