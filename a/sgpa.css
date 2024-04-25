@@ -111,4 +111,6 @@ table input {
   color: aliceblue;
   font-size: 15px;
   margin-left: 10px;
+  width: 100%; 
+  boxSizing: border-box;
 }
