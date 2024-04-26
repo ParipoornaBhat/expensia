@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body {
+  overflow-x: hidden;
   color: aliceblue;
   background-color: #12100e;
   margin: 10px;
@@ -128,4 +129,7 @@ body {
   .profiles {
     width: 100%; /* Make buttons full width on smaller screens */
   }
+}
+html{
+overflow-x: hidden;
 }
