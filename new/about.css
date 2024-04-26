@@ -89,7 +89,7 @@ body {
   width: 6rem;
   height: 6rem;
   object-fit: cover;
-  object-position: bottom;
+  object-position: top;
   border-radius: 50%;
   border: 4px rgb(208, 206, 206) solid;
   position: relative;
