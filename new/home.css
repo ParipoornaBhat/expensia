@@ -97,7 +97,7 @@ h2 {
 }
 section {
   text-decoration: none;
-  font-size: 25px;
+  font-size: calc(3vw + 3vh);
 }
 .container-temp button:hover {
   scale: 1.05;
