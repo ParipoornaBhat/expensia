@@ -53,6 +53,7 @@ body {
   color: orange;
 }
 .container-main {
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
   width: 100%;
   height: 100%;
   padding: 15px;
@@ -68,7 +69,7 @@ body {
 .profiles {
   display: flex;
   justify-content: center;
-  padding: 100px;
+  padding: 50px;
   scale: 1.7;
   margin-top: 20%;
   padding-top: 0;
