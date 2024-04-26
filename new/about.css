@@ -66,7 +66,7 @@ body {
   color: orange;
 }
 .profiles {
-  display: flex;
+  
   justify-content: center;
   padding: 50px;
   scale: 1.7;
