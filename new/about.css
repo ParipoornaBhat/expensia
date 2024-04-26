@@ -33,7 +33,17 @@ body {
   display: inline-block;
   padding: none;
 }
-.top a {
+.top a.active3{
+  float: left;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  horizontal-align: right;
+  text-decoration: none;
+}
+.top a.active2{
   float: right;
   padding: 30px;
   padding-top: 10px;
@@ -44,15 +54,24 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-
+.top a.active{
+  color: orange;
+  float: right;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  horizontal-align: right;
+  text-decoration: none;
+  font-size: 17px;
+}
 .top a:hover {
   color: blanchedalmond;
   background-color: rgb(44, 54, 69);
 }
 
-.top a.active {
-  color: orange;
-}
+
 .container-main {
   min-height: 100vh; /* Set minimum height to 100% of viewport height */
   width: 100vw; /* Cover the whole viewport width */
