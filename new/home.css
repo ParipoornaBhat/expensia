@@ -81,7 +81,8 @@ table {
   border: 1px orange solid;
   padding: 15px;
   height: 450px;
-  width: 90%;
+  width: auto;
+  max-width: 100%;
   cursor: pointer;
   border-radius: 23px;
   margin: 10px;
