@@ -81,7 +81,7 @@ table {
   border: 1px orange solid;
   padding: 15px;
   height: 450px;
-  width: auto;
+  width: calc(33.33vw - 20px);
   max-width: 100%;
   cursor: pointer;
   border-radius: 23px;
