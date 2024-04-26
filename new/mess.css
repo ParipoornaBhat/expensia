@@ -115,3 +115,22 @@ table input {
   width: 100%;
   boxSizing: border-box;
 }
+@media print {
+  /* Invert colors for the entire page */
+  body, html {
+    filter: invert(100%);
+  }
+
+  /* Set landscape orientation */
+  @page {
+    size: landscape;
+  }
+  /* Example CSS to control print layout */
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Add more CSS rules as needed to control print layout */
+}
