@@ -72,6 +72,7 @@ body {
   scale: 1.7;
   margin-top: 10%;
   padding-top: 0;
+  width: 100%;
   align-items: center; /* Vertically center items */
 }
 .profile-group {
@@ -122,4 +123,9 @@ body {
   font-size: small;
 }
 
-
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .profiles {
+    width: 100%; /* Make buttons full width on smaller screens */
+  }
+}
