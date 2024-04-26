@@ -68,7 +68,7 @@ body {
 .profiles {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  padding: 10px;
   scale: 1.7;
   margin-top: 20%;
   padding-top: 0;
