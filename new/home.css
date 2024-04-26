@@ -71,6 +71,7 @@ body {
 table {
   text-align: center;
   width: 70%;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -80,7 +81,7 @@ table {
   background-color: #181818;
   border: 1px orange solid;
   padding: 15px;
-  height: auto;
+  height: 100%;
   width: calc(33.33vw - 20px);
   max-width: 100%;
   cursor: pointer;
