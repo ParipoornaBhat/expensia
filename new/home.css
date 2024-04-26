@@ -99,7 +99,7 @@ section {
   font-size: min(calc(3vw + 3vh), 20px); /* Maximum font size of 20px */
   text-decoration: none;
   width: auto;
-  height: auto;
+  height: 250;
   overflow: auto; /* Add overflow auto if content exceeds container height */
 }
 .container-temp button:hover {
