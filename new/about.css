@@ -33,9 +33,7 @@ body {
   display: inline-block;
   padding: none;
 }
-.top a.active3{
-  text-decoration: none;
-}
+
 .top a.active2{
   float: right;
   padding: 30px;
