@@ -75,7 +75,6 @@ body {
   align-items: center; /* Vertically center items */
 }
 .profile-group {
-  flex: 1; /* Equal space for each profile group */
   position: relative;
   margin-left: -12px;
   cursor: pointer;
