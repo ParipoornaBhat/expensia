@@ -119,3 +119,36 @@ body {
   display: block;
   font-size: small;
 }
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center items */
+  margin-top: 20%;
+}
+
+.profile-group {
+  flex: 1; /* Equal space for each profile group */
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-group img {
+  max-width: 100%; /* Adjusted to prevent cropping */
+  max-height: 100%; /* Adjusted to prevent cropping */
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 4px rgb(208, 206, 206) solid;
+  position: relative;
+  transition: 0.3s top ease-in-out;
+}
+
+.container-main {
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  width: 100vw; /* Cover the whole viewport width */
+  padding: 15px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: aliceblue;
+}
