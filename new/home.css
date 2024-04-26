@@ -81,7 +81,7 @@ table {
   background-color: #181818;
   border: 1px orange solid;
   padding: 15px;
-  height: 100%;
+  height: 250;
   width: calc(33.33vw - 20px);
   max-width: 100%;
   cursor: pointer;
