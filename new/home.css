@@ -13,7 +13,6 @@ body {
   height: 100%;
   z-index: -1;
   width: 100%;
-  background-size: cover;
 }
 .top {
   color: aliceblue;
@@ -34,7 +33,7 @@ body {
   padding: none;
 }
 .top a {
-  float: right;
+  text-align: right;
   padding: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
