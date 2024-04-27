@@ -84,12 +84,12 @@ body {
   scale: 1.7;
   margin-top: 10%;
   padding-top: 0;
-  width: 75%;
+  width: 100%;
   align-items: center; /* Vertically center items */
 }
 .profile-group {
   position: relative;
-  margin-left: -12px;
+  margin-left: 12px;
   cursor: pointer;
 }
 .profile-group:hover img {
