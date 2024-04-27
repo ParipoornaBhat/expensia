@@ -89,7 +89,7 @@ body {
 }
 .profile-group {
   position: relative;
-  margin-left: 12px;
+  margin-left: -12px;
   cursor: pointer;
 }
 .profile-group:hover img {
