@@ -115,11 +115,11 @@ max-width: 6rem; /* Adjusted to prevent cropping */
   transition: 0.3s top ease-in-out;
 }
 .profile-group:first-child {
-  margin-left: 1; /* Remove left margin for the first image */
+  margin-left: -1; /* Remove left margin for the first image */
 }
 
 .profile-group:last-child {
-  margin-right: 1; /* Remove right margin for the last image */
+  margin-right: -1; /* Remove right margin for the last image */
 }
 .profile-group p {
   position: absolute;
