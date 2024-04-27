@@ -96,7 +96,7 @@ body {
   z-index: 2;
 }
 .profile-group img {
-  width: 4rem; /* Adjusted to prevent cropping */
+  width: auto; /* Adjusted to prevent cropping */
   height: 6rem;
   object-fit: cover;
   object-position: top;
