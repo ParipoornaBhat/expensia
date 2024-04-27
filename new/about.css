@@ -104,7 +104,7 @@ max-width: 6rem; /* Adjusted to prevent cropping */
 .profile-group img {
   max-width: 6rem; /* Adjusted to prevent cropping */
   width: auto;
-  height: auto;
+  height: 6rem;
   object-fit: cover;
   object-position: top;
   border-radius: 50%;
