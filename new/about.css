@@ -97,7 +97,7 @@ overflow-x: auto;
   z-index: 2;
 }
 .profile-group img {
-  width: auto; /* Adjusted to prevent cropping */
+  width: 6rem; /* Adjusted to prevent cropping */
   height: 6rem;
   object-fit: cover;
   object-position: top;
