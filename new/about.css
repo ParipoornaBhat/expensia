@@ -99,7 +99,6 @@ overflow-x: auto;
 }
 .profile-group img {
   max-width: 6rem; /* Adjusted to prevent cropping */
-  width: auto;
   height: 6rem;
   object-fit: cover;
   object-position: top;
