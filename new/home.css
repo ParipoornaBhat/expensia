@@ -31,8 +31,10 @@ body {
   text-align: left;
   display: inline-block;
   padding: none;
+  color: aliceblue;
 }
-.top a {
+
+.top a.active2{
   float: right;
   padding: 30px;
   padding-top: 10px;
@@ -43,7 +45,18 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-
+.top a.active{
+  color: orange;
+  float: right;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  horizontal-align: right;
+  text-decoration: none;
+  font-size: 17px;
+}
 .top a:hover {
   color: blanchedalmond;
   background-color: rgb(44, 54, 69);
