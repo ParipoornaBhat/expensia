@@ -135,9 +135,9 @@ table input {
   }
 
   /* Set landscape orientation */
-  @page {
-    size: landscape;
-  }
+    @page {
+        size: A4 landscape;
+    }
   /* Example CSS to control print layout */
   body {
     width: 100%;
