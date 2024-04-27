@@ -85,7 +85,6 @@ body {
   padding-top: 0;
   margin-top: 20%;
   align-items: center; /* Vertically center items */
-overflow-x: auto;
 }
 .profile-group {
   position: relative;
@@ -97,7 +96,7 @@ overflow-x: auto;
   z-index: 2;
 }
 .profile-group img {
-  width: 6rem; /* Adjusted to prevent cropping */
+  width: 4rem; /* Adjusted to prevent cropping */
   height: 6rem;
   object-fit: cover;
   object-position: top;
