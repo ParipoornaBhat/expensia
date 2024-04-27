@@ -130,7 +130,7 @@ table input {
 }
 @media print {
   /* Invert colors for the entire page */
-  body, html {
+  body, html,.bgimg {
     filter: invert(100%);
   }
 
