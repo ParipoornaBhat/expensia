@@ -99,7 +99,7 @@ body {
 .profile-group img {
   max-width: 100%; /* Adjusted to prevent cropping */
   max-height: 100%; /* Adjusted to prevent cropping */
-  width: 10%;
+  width: 6rem;
   height: 6rem;
   object-fit: cover;
   object-position: top;
