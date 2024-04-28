@@ -96,7 +96,8 @@ body {
   z-index: 2;
 }
 .profile-group img {
-  flex-wrap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   width: auto; /* Adjusted to prevent cropping */
   height: 6rem;
   object-fit: cover;
