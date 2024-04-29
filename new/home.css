@@ -34,18 +34,17 @@ body {
   color: aliceblue;
 }
 
-.top a.active2{
+.top a.active2 {
   float: right;
   padding: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: aliceblue;
   vertical-align: middle;
-  horizontal-align: right;
   text-decoration: none;
   font-size: 17px;
 }
-.top a.active{
+.top a.active {
   color: orange;
   float: right;
   padding: 30px;
@@ -53,7 +52,6 @@ body {
   padding-bottom: 10px;
   color: aliceblue;
   vertical-align: middle;
-  horizontal-align: right;
   text-decoration: none;
   font-size: 17px;
 }
@@ -83,24 +81,25 @@ body {
 }
 table {
   text-align: center;
-  width: 70%;
+  display: block;
+  width: 100%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+td {
+  padding-right: 120px;
+}
 .container-temp button {
   background-color: #181818;
   border: 1px orange solid;
   padding: 15px;
-  height: 400px;
-  width: calc(33.33vw - 20px);
-  max-width: 100%;
   cursor: pointer;
+  width: 100%;
   border-radius: 23px;
   margin: 10px;
-  word-wrap: normal;
   color: rgb(239, 243, 248);
   box-shadow: 14px 14px 0 #cf8f03;
   transition: 0.3s;
