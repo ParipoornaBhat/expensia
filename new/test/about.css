@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  color: aliceblue;
+  background-color: #12100e;
+  margin: 10px;
+}
+.bgimg {
+  position: absolute;
+  height: 100vh; /* Use viewport height */
+  z-index: -1;
+  width: 100vw; /* Use viewport width */
+}
+.top {
+  color: aliceblue;
+  border: 2px aliceblue solid;
+  font-family: comfortaa;
+  background: transparent;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 75px;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+}
+.top h1 {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: left;
+  display: inline-block;
+  padding: none;
+  color: aliceblue;
+}
+
+.top a.active2{
+  float: right;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  horizontal-align: right;
+  text-decoration: none;
+  font-size: 17px;
+}
+.top a.active{
+  color: orange;
+  float: right;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: aliceblue;
+  vertical-align: middle;
+  horizontal-align: right;
+  text-decoration: none;
+  font-size: 17px;
+}
+.top a:hover {
+  color: blanchedalmond;
+  background-color: rgb(44, 54, 69);
+}
+
+
+.container-main {
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  width: 100vw; /* Cover the whole viewport width */
+  padding: 15px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: aliceblue;
+}
+.container-main section {
+  font-family: comfortaa;
+  display: inline-block;
+  color: orange;
+}
+.profiles {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  scale: 1.7;
+  padding-top: 0;
+  margin-top: 20%;
+  align-items: center; /* Vertically center items */
+}
+.profile-group {
+  position: relative;
+  margin-left: -12px;
+  cursor: pointer;
+}
+.profile-group:hover img {
+  top: -1rem;
+  z-index: 2;
+}
+.profile-group img {
+  display: flex;
+  flex-wrap: wrap;
+  width: 6rem; /* Adjusted to prevent cropping */
+  height: 6rem;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 4px rgb(208, 206, 206) solid;
+  position: relative;
+  top: 0;
+  transition: 0.3s top ease-in-out;
+}
+
+.profile-group p {
+  position: absolute;
+  border-radius: inherit;
+  padding: 0.2rem 0.5rem;
+  top: 6rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.profile-group p#mentor {
+  position: absolute;
+  border-radius: inherit;
+  padding: 0.2rem 0.5rem;
+  top: -35px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.profile-group:hover p,
+.profile-group:hover p#mentor {
+  display: block;
+  font-size: small;
+}
+
+
+html{
+overflow-x: hidden;
+}
