@@ -35,7 +35,7 @@ body {
   color: aliceblue;
 }
 
-.top a.active2{
+.top a.active2 {
   float: right;
   padding: 30px;
   padding-top: 10px;
@@ -46,13 +46,12 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-.top a.active{
+.top a.active {
   color: orange;
   float: right;
   padding: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: aliceblue;
   vertical-align: middle;
   horizontal-align: right;
   text-decoration: none;
@@ -62,7 +61,6 @@ body {
   color: blanchedalmond;
   background-color: rgb(44, 54, 69);
 }
-
 
 .container-main {
   min-height: 100vh; /* Set minimum height to 100% of viewport height */
@@ -135,7 +133,6 @@ body {
   font-size: small;
 }
 
-
-html{
-overflow-x: hidden;
+html {
+  overflow-x: hidden;
 }
