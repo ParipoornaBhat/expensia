@@ -70,6 +70,7 @@ function ct() {
   table.appendChild(tbody);
   t.innerHTML = "";
   t.appendChild(table);
+  saveSplitData();
 }
 
 function uv() {
@@ -161,19 +162,112 @@ function uv() {
       document.getElementById(`pnb${i}`).textContent = `₹${tb.toFixed(2)}`;
     }
   }
+  saveSplitData();
 }
 
 function addFoodItem() {
   const nof = parseInt(document.getElementById("nof").value);
   document.getElementById("nof").value = nof + 1;
   ct();
+  saveSplitData();
 }
 
 function addPerson() {
   const nop = parseInt(document.getElementById("nop").value);
   document.getElementById("nop").value = nop + 1;
   ct();
+  saveSplitData();
 }
 function printPDF() {
   window.print();
 }
+
+function saveSplitData() {
+  const nopElem = document.getElementById("nop");
+  const nofElem = document.getElementById("nof");
+
+  if (!nopElem || !nofElem) return;
+
+  const data = {
+    nop: nopElem.value || 0,
+    nof: nofElem.value || 0,
+    people: [],
+    foods: [],
+    checks: []
+  };
+
+  const nop = parseInt(data.nop) || 0;
+  const nof = parseInt(data.nof) || 0;
+
+  for (let i = 0; i < nop; i++) {
+    const pElem = document.getElementById(`p${i}`);
+    if (pElem) data.people.push(pElem.value);
+  }
+
+  for (let i = 0; i < nof; i++) {
+    const fnElem = document.getElementById(`fn${i}`);
+    const fpElem = document.getElementById(`fp${i}`);
+    if (fnElem && fpElem) {
+      data.foods.push({ name: fnElem.value, price: fpElem.value });
+    }
+
+    let foodChecks = [];
+    for (let j = 0; j < nop; j++) {
+      const cb = document.getElementById(`f${i}p${j}`);
+      foodChecks.push(cb ? cb.checked : false);
+    }
+    data.checks.push(foodChecks);
+  }
+
+  localStorage.setItem("splitData", JSON.stringify(data));
+}
+
+function loadSplitData() {
+  const saved = localStorage.getItem("splitData");
+  if (saved) {
+    const data = JSON.parse(saved);
+    if (data.nop && document.getElementById("nop")) document.getElementById("nop").value = data.nop;
+    if (data.nof && document.getElementById("nof")) document.getElementById("nof").value = data.nof;
+
+    if (parseInt(data.nop) > 0 && parseInt(data.nof) > 0) {
+      ct();
+
+      const nop = parseInt(data.nop);
+      const nof = parseInt(data.nof);
+
+      for (let i = 0; i < nop; i++) {
+        if (data.people && data.people[i] && document.getElementById(`p${i}`)) {
+          document.getElementById(`p${i}`).value = data.people[i];
+        }
+      }
+
+      for (let i = 0; i < nof; i++) {
+        if (data.foods && data.foods[i]) {
+          if (document.getElementById(`fn${i}`)) document.getElementById(`fn${i}`).value = data.foods[i].name;
+          if (document.getElementById(`fp${i}`)) document.getElementById(`fp${i}`).value = data.foods[i].price;
+        }
+
+        for (let j = 0; j < nop; j++) {
+          if (data.checks && data.checks[i] && data.checks[i][j] !== undefined && document.getElementById(`f${i}p${j}`)) {
+            document.getElementById(`f${i}p${j}`).checked = data.checks[i][j];
+          }
+        }
+      }
+
+      if (data.people && data.people.length > 0 && data.foods && data.foods.length > 0) {
+        uv();
+      }
+    }
+  }
+}
+
+window.addEventListener("load", () => {
+  loadSplitData();
+  const nopElem = document.getElementById("nop");
+  const nofElem = document.getElementById("nof");
+  const tcElem = document.getElementById("tc");
+
+  if (nopElem) nopElem.addEventListener("input", saveSplitData);
+  if (nofElem) nofElem.addEventListener("input", saveSplitData);
+  if (tcElem) tcElem.addEventListener("input", saveSplitData);
+});

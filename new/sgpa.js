@@ -1,4 +1,4 @@
-function ct(){
+function ct() {
   const nos = document.getElementById("nos").value;
   const t = document.getElementById("tc");
 
@@ -9,21 +9,21 @@ function ct(){
   const hr = document.createElement("tr");
 
   const sn = document.createElement("th");
-    sn.textContent = "SUBJECT";
+  sn.textContent = "SUBJECT";
   const cie = document.createElement("th");
-    cie.textContent = "CIE (OUT OF 50)";
+  cie.textContent = "CIE (OUT OF 50)";
   const see = document.createElement("th");
-    see.textContent = "SEE (OUT OF 50)";
+  see.textContent = "SEE (OUT OF 50)";
   const tt = document.createElement("th");
-    tt.textContent = "TOTAL(CIE+SEE)";
+  tt.textContent = "TOTAL(CIE+SEE)";
   const g = document.createElement("th");
-    g.textContent = "GRADE";
+  g.textContent = "GRADE";
   const gp = document.createElement("th");
-    gp.textContent = "GRADE POINT";
+  gp.textContent = "GRADE POINT";
   const c = document.createElement("th");
-    c.textContent = "CREDITS";
+  c.textContent = "CREDITS";
   const ttt = document.createElement("th");
-    ttt.textContent = "TOTAL(GP*C)";
+  ttt.textContent = "TOTAL(GP*C)";
 
   hr.appendChild(sn);
   hr.appendChild(cie);
@@ -39,55 +39,54 @@ function ct(){
 
   const tbody = document.createElement("tbody");
 
-  for (let i = 0; i < nos; i++) 
-  {
+  for (let i = 0; i < nos; i++) {
     const row = document.createElement("tr");
-    
+
     const sbn = document.createElement("td");
-      const sip = document.createElement("input");
-        sip.type = "text";
-        sip.id = `sn${i}`;
-        sip.value = `SUBJECT ${i + 1}`;
-      sbn.appendChild(sip);
+    const sip = document.createElement("input");
+    sip.type = "text";
+    sip.id = `sn${i}`;
+    sip.value = `SUBJECT ${i + 1}`;
+    sbn.appendChild(sip);
 
     const ciec = document.createElement("td");
-      const cieip = document.createElement("input");
-        cieip.type = "number";
-        cieip.id = `cie${i}`;
-        cieip.value = `50`;
-        cieip.min = `0`;
-        cieip.max = `50`;
-        cieip.step=`1`;
-      ciec.appendChild(cieip);
-    
+    const cieip = document.createElement("input");
+    cieip.type = "number";
+    cieip.id = `cie${i}`;
+    cieip.value = `50`;
+    cieip.min = `0`;
+    cieip.max = `50`;
+    cieip.step = `1`;
+    ciec.appendChild(cieip);
+
     const seec = document.createElement("td");
-      const seeip = document.createElement("input");
-        seeip.type = "number";
-        seeip.id = `see${i}`;
-        seeip.value = `50`;
-        seeip.min = `0`;
-        seeip.max = `50`;
-        seeip.step=`1`;
-      seec.appendChild(seeip);
+    const seeip = document.createElement("input");
+    seeip.type = "number";
+    seeip.id = `see${i}`;
+    seeip.value = `50`;
+    seeip.min = `0`;
+    seeip.max = `50`;
+    seeip.step = `1`;
+    seec.appendChild(seeip);
 
     const ttc = document.createElement("td");
-      ttc.id = `tt${i}`;
+    ttc.id = `tt${i}`;
     const gc = document.createElement("td");
-      gc.id = `g${i}`;
+    gc.id = `g${i}`;
     const gpc = document.createElement("td");
-      gpc.id = `gp${i}`;
+    gpc.id = `gp${i}`;
 
     const crec = document.createElement("td");
-      const creip = document.createElement("input");
-        creip.type = "number";
-        creip.id = `cre${i}`;
-        creip.value = `3`;
-        creip.min = `0`;
-        creip.max = `4`;
-        creip.step=`1`;
-      crec.appendChild(creip);
+    const creip = document.createElement("input");
+    creip.type = "number";
+    creip.id = `cre${i}`;
+    creip.value = `3`;
+    creip.min = `0`;
+    creip.max = `4`;
+    creip.step = `1`;
+    crec.appendChild(creip);
     const tttc = document.createElement("td");
-      tttc.id = `ttt${i}`;
+    tttc.id = `ttt${i}`;
 
     row.appendChild(sbn);
     row.appendChild(ciec);
@@ -99,11 +98,12 @@ function ct(){
     row.appendChild(tttc);
 
     tbody.appendChild(row);
-  
-  table.appendChild(tbody);
-  t.innerHTML = "";
-  t.appendChild(table);
-}
+
+    table.appendChild(tbody);
+    t.innerHTML = "";
+    t.appendChild(table);
+    saveSGPAData();
+  }
 }
 
 function uv() {
@@ -180,15 +180,67 @@ function uv() {
   sg.appendChild(r);
 
   ssgpa.appendChild(sg);
+  saveSGPAData();
 }
 
-function addSubject() 
-{
+function addSubject() {
   const nos = parseInt(document.getElementById("nos").value);
   document.getElementById("nos").value = nos + 1;
   ct();
+  saveSGPAData();
 }
-function printPDF() 
-{
+function printPDF() {
   window.print();
 }
+
+function saveSGPAData() {
+  const data = {
+    nos: document.getElementById("nos").value,
+    subjects: []
+  };
+  const nos = parseInt(data.nos) || 0;
+  for (let i = 0; i < nos; i++) {
+    const sn = document.getElementById(`sn${i}`);
+    const cie = document.getElementById(`cie${i}`);
+    const see = document.getElementById(`see${i}`);
+    const cre = document.getElementById(`cre${i}`);
+    if (sn && cie && see && cre) {
+      data.subjects.push({
+        sn: sn.value,
+        cie: cie.value,
+        see: see.value,
+        cre: cre.value
+      });
+    }
+  }
+  localStorage.setItem("sgpaData", JSON.stringify(data));
+}
+
+function loadSGPAData() {
+  const saved = localStorage.getItem("sgpaData");
+  if (saved) {
+    const data = JSON.parse(saved);
+    if (data.nos) {
+      document.getElementById("nos").value = data.nos;
+      if (parseInt(data.nos) > 0) {
+        ct();
+        for (let i = 0; i < data.subjects.length; i++) {
+          const sub = data.subjects[i];
+          if (document.getElementById(`sn${i}`)) document.getElementById(`sn${i}`).value = sub.sn;
+          if (document.getElementById(`cie${i}`)) document.getElementById(`cie${i}`).value = sub.cie;
+          if (document.getElementById(`see${i}`)) document.getElementById(`see${i}`).value = sub.see;
+          if (document.getElementById(`cre${i}`)) document.getElementById(`cre${i}`).value = sub.cre;
+        }
+        if (data.subjects.length > 0) {
+          uv();
+        }
+      }
+    }
+  }
+}
+
+window.addEventListener("load", () => {
+  loadSGPAData();
+  document.getElementById("nos").addEventListener("input", saveSGPAData);
+  document.getElementById("tc").addEventListener("input", saveSGPAData);
+});
